@@ -616,12 +616,11 @@ textarea:focus {
     </div>
   </section>
 
-  <form id="assessmentForm" action="https://formsubmit.co/bradd@gamma.tech" method="POST">
+  <form id="assessmentForm" action="https://flowform.to/submit" method="POST">
+    <input type="hidden" name="_to" value="bradd@gamma.tech">
     <input type="hidden" name="_subject" value="Quality Enterprises AI Readiness Intake">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://grantayeye.github.io/quality-ai-assessment/thanks.html">
-    <input type="text" name="_honey" class="hidden-field" tabindex="-1" autocomplete="off">
+    <input type="hidden" name="_replyto" id="replyTo">
 
     <section class="section-card">
       <div class="section-header">
@@ -1011,6 +1010,7 @@ form.addEventListener('change', () => {
 });
 
 form.addEventListener('submit', () => {
+  document.getElementById('replyTo').value = document.getElementById('email').value;
   localStorage.removeItem(storageKey);
 });
 
