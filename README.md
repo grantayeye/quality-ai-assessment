@@ -6,6 +6,11 @@ Static intake form for Quality Enterprises AI planning conversations.
 
 This site is intended for GitHub Pages.
 
+## Forms
+
+- Original MSP-aware intake: `/`
+- AI discovery questionnaire: `/ai-discovery.html`
+
 ## Form Delivery
 
 Submissions post to FlowForm and are emailed to `bradd@gamma.tech`.

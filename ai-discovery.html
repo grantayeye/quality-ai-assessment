@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Quality Enterprises AI Discovery Questionnaire</title>
+<link rel="icon" href="assets/gamma-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #0F2F44;
+  --primary-light: #133F5C;
+  --accent: #017ED7;
+  --accent-hover: #0069AF;
+  --accent-bg: #EEF8FE;
+  --good: #2E7D32;
+  --good-bg: #E8F5E9;
+  --good-border: #A5D6A7;
+  --text: #393939;
+  --text-light: #5A5A5A;
+  --text-lighter: #8B8B8B;
+  --bg: #FAFAFA;
+  --card: #FFFFFF;
+  --border: #E0E0E0;
+  --shadow: 0 2px 16px rgba(15,47,68,0.06);
+  --shadow-lg: 0 8px 32px rgba(15,47,68,0.10);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --transition: all 0.25s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  padding-bottom: 96px;
+}
+
+header {
+  background: linear-gradient(135deg, #0F2F44 0%, #133F5C 100%);
+  color: white;
+  padding: 26px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 4px 24px rgba(15,47,68,0.18);
+}
+
+.header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.brand img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.brand-copy {
+  min-width: 0;
+}
+
+.brand-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brand-subtitle {
+  font-size: 13px;
+  opacity: 0.75;
+  font-weight: 400;
+}
+
+.progress-box {
+  min-width: 190px;
+  text-align: right;
+}
+
+.progress-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.65;
+  font-weight: 600;
+}
+
+.progress-value {
+  color: #74C7FF;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-track {
+  width: 100%;
+  height: 7px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #74C7FF;
+  transition: width 0.25s ease;
+}
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 16px;
+}
+
+.intro {
+  background: linear-gradient(135deg, #E8F5E9 0%, #EEF8FE 100%);
+  border: 2px solid var(--good-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+}
+
+.intro h1 {
+  font-size: 26px;
+  line-height: 1.18;
+  color: var(--primary);
+  letter-spacing: 0;
+  margin-bottom: 8px;
+}
+
+.intro p {
+  color: var(--text-light);
+  max-width: 760px;
+  font-size: 15px;
+}
+
+.intro-meta {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(15,47,68,0.08);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  min-width: 185px;
+}
+
+.intro-meta span {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-lighter);
+  font-weight: 700;
+}
+
+.intro-meta strong {
+  display: block;
+  margin-top: 3px;
+  color: var(--primary);
+  font-size: 15px;
+}
+
+form {
+  display: grid;
+  gap: 24px;
+}
+
+.section-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px 32px;
+  border: 1px solid rgba(15,47,68,0.03);
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.section-title {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.section-number {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--accent-bg);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 800;
+  flex: 0 0 auto;
+}
+
+h2 {
+  font-size: 19px;
+  color: var(--text);
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+.section-note {
+  margin-top: 4px;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.required-note {
+  color: var(--text-lighter);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.form-group {
+  min-width: 0;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+label,
+.group-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  transition: var(--transition);
+  background: white;
+}
+
+textarea {
+  min-height: 118px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(1,126,215,0.12);
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.option-tile {
+  min-height: 54px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 13px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.option-tile:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.option-tile input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--accent);
+  flex: 0 0 auto;
+}
+
+.option-tile span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  min-width: 0;
+}
+
+.rank-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.rank-card {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  background: #fff;
+}
+
+.rank-card strong {
+  display: block;
+  color: var(--primary);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.scale {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.scale label {
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.scale input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scale span {
+  display: grid;
+  place-items: center;
+  height: 42px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: white;
+  color: var(--text-light);
+  font-weight: 800;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.scale input:checked + span {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.helper-text {
+  font-size: 12px;
+  color: var(--text-lighter);
+  margin-top: 6px;
+}
+
+.submit-card {
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 26px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.submit-card h2 {
+  color: white;
+  margin-bottom: 4px;
+}
+
+.submit-card p {
+  color: rgba(255,255,255,0.72);
+  font-size: 14px;
+}
+
+.btn {
+  min-height: 46px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.summary-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--primary);
+  color: white;
+  padding: 14px 24px;
+  padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -4px 24px rgba(15,47,68,0.18);
+  z-index: 30;
+}
+
+.summary-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.summary-stats {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.58;
+  font-weight: 700;
+}
+
+.stat-value {
+  display: block;
+  font-size: 17px;
+  font-weight: 800;
+  color: #74C7FF;
+}
+
+.summary-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.summary-actions .btn {
+  min-height: 42px;
+  padding: 10px 18px;
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.25);
+}
+
+.btn-outline:hover {
+  border-color: white;
+}
+
+.hidden-field {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .intro,
+  .submit-card,
+  .summary-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    display: block;
+  }
+
+  .intro-meta {
+    margin-top: 16px;
+  }
+
+  .form-grid,
+  .form-grid.three,
+  .checkbox-grid,
+  .rank-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-card,
+  .summary-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .summary-stats {
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .summary-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  body { padding-bottom: 142px; }
+  header { padding: 14px 16px; }
+  .header-inner { gap: 10px; align-items: flex-start; }
+  .brand { gap: 10px; }
+  .brand img { height: 25px; }
+  .brand-title { font-size: 15px; white-space: normal; line-height: 1.15; }
+  .brand-subtitle { display: none; }
+  .progress-box { min-width: 92px; }
+  .progress-label { font-size: 9px; letter-spacing: 0.5px; }
+  .progress-value { font-size: 20px; }
+  main { padding: 18px 12px; }
+  .intro,
+  .section-card,
+  .submit-card { padding: 22px 18px; }
+  .intro h1 { font-size: 22px; }
+  .section-header { flex-direction: column; gap: 8px; }
+  .required-note { white-space: normal; }
+  .section-title { gap: 10px; }
+  .section-number { width: 30px; height: 30px; font-size: 13px; }
+  h2 { font-size: 17px; }
+  .summary-bar { padding: 12px 14px; padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
+  .summary-stats { flex-wrap: wrap; }
+  .summary-actions .btn { padding: 10px 12px; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <img src="assets/gamma-logo.svg" alt="Gamma Tech">
+      <div class="brand-copy">
+        <div class="brand-title">Quality Enterprises AI Discovery</div>
+        <div class="brand-subtitle">Prepared for Quality Enterprises by Gamma Tech</div>
+      </div>
+    </div>
+    <div class="progress-box" aria-live="polite">
+      <div class="progress-label">Completion</div>
+      <div class="progress-value" id="progressValue">0%</div>
+      <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div>
+      <h1>Help us understand how AI is already showing up inside the company.</h1>
+      <p>This form is focused on current AI use, immediate questions, concerns, and practical places where a small pilot could help.</p>
+    </div>
+    <div class="intro-meta">
+      <span>Estimated Time</span>
+      <strong>8 to 10 minutes</strong>
+    </div>
+  </section>
+
+  <form id="assessmentForm" action="https://flowform.to/submit" method="POST">
+    <input type="hidden" name="_to" value="Bradd@gamma.tech">
+    <input type="hidden" name="_subject" value="Quality Enterprises AI Discovery Questionnaire">
+    <input type="hidden" name="_next" value="https://grantayeye.github.io/quality-ai-assessment/thanks.html">
+    <input type="hidden" name="_replyto" id="replyTo">
+
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <div class="section-number">1</div>
+          <div>
+            <h2>Contact and perspective</h2>
+            <p class="section-note">Who is answering, and which part of the company are they speaking from?</p>
+          </div>
+        </div>
+        <div class="required-note">Required</div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input id="name" name="Contact name" type="text" autocomplete="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="Contact email" type="email" autocomplete="email" required>
+        </div>
+        <div class="form-group full">
+          <label for="role">Role or department</label>
+          <input id="role" name="Role or department" type="text" required>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <div class="section-number">2</div>
+          <div>
+            <h2>Current AI use</h2>
+            <p class="section-note">This includes official use, informal use, and anything people are trying on their own.</p>
+          </div>
+        </div>
+        <div class="required-note">Required</div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label for="whoUsingAi">Who inside the company is already using AI?</label>
+          <textarea id="whoUsingAi" name="Who is using AI" required placeholder="Examples: leadership, sales, admin, field teams, accounting, individuals experimenting on their own"></textarea>
+        </div>
+        <div class="form-group full">
+          <div class="group-label">AI tools people are using</div>
+          <div class="checkbox-grid">
+            <label class="option-tile"><input type="checkbox" name="Current AI tools" value="ChatGPT"><span>ChatGPT</span></label>
+            <label class="option-tile"><input type="checkbox" name="Current AI tools" value="Microsoft Copilot"><span>Microsoft Copilot</span></label>
+            <label class="option-tile"><input type="checkbox" name="Current AI tools" value="Google Gemini"><span>Google Gemini</span></label>
+            <label class="option-tile"><input type="checkbox" name="Current AI tools" value="Claude"><span>Claude</span></label>
+            <label class="option-tile"><input type="checkbox" name="Current AI tools" value="Canva or design AI"><span>Canva/design AI</span></label>
+            <label class="option-tile"><input type="checkbox" name="Current AI tools" value="Built-in AI tools"><span>Built-in app AI</span></label>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="currentUse">What are people using AI for right now?</label>
+          <textarea id="currentUse" name="Current AI use cases" required placeholder="Examples: writing emails, summarizing documents, brainstorming, estimating, customer communication, spreadsheets, marketing, research"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="adoptionStage">How is AI being used today?</label>
+          <select id="adoptionStage" name="AI adoption stage" required>
+            <option value="">Select one</option>
+            <option>Mostly individual experimentation</option>
+            <option>Some team-level use</option>
+            <option>Part of a normal workflow</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="comfort">Overall comfort level</label>
+          <select id="comfort" name="Team AI comfort level">
+            <option value="">Select one</option>
+            <option>Very comfortable</option>
+            <option>Somewhat comfortable</option>
+            <option>Curious but unsure</option>
+            <option>Skeptical or concerned</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="timeSaved">Where has AI already saved time?</label>
+          <textarea id="timeSaved" name="Where AI saved time"></textarea>
+        </div>
+        <div class="form-group full">
+          <label for="badResults">Where has AI produced bad, risky, or unhelpful results?</label>
+          <textarea id="badResults" name="Bad or risky AI results"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <div class="section-number">3</div>
+          <div>
+            <h2>Questions, policy, and concerns</h2>
+            <p class="section-note">This helps us see what guidance is needed before AI gets rolled out more broadly.</p>
+          </div>
+        </div>
+        <div class="required-note">Required</div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="sensitiveData">Are people putting company, customer, financial, or private information into AI tools?</label>
+          <select id="sensitiveData" name="Sensitive data in AI tools" required>
+            <option value="">Select one</option>
+            <option>Yes</option>
+            <option>No</option>
+            <option>Not sure</option>
+            <option>It depends on the team</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="policy">Has the team been given guidance on what is okay or not okay?</label>
+          <select id="policy" name="AI policy status">
+            <option value="">Select one</option>
+            <option>Yes, we have clear guidance</option>
+            <option>Some informal guidance</option>
+            <option>No guidance yet</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="immediateQuestions">What questions do you have right now about AI?</label>
+          <textarea id="immediateQuestions" name="Immediate AI questions" required placeholder="Examples: security, privacy, accuracy, cost, policies, tools, training, how to roll it out"></textarea>
+        </div>
+        <div class="form-group full">
+          <div class="group-label">What worries you most?</div>
+          <div class="checkbox-grid">
+            <label class="option-tile"><input type="checkbox" name="AI worries" value="Privacy"><span>Privacy</span></label>
+            <label class="option-tile"><input type="checkbox" name="AI worries" value="Security"><span>Security</span></label>
+            <label class="option-tile"><input type="checkbox" name="AI worries" value="Accuracy"><span>Accuracy</span></label>
+            <label class="option-tile"><input type="checkbox" name="AI worries" value="Cost"><span>Cost</span></label>
+            <label class="option-tile"><input type="checkbox" name="AI worries" value="Staff adoption"><span>Staff adoption</span></label>
+            <label class="option-tile"><input type="checkbox" name="AI worries" value="No clear ROI"><span>No clear ROI</span></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <div class="section-number">4</div>
+          <div>
+            <h2>Workflow opportunities</h2>
+            <p class="section-note">This section is about the work people do every day, not the software inventory we already know.</p>
+          </div>
+        </div>
+        <div class="required-note">Required</div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label for="repetitiveWork">What repetitive work do people complain about the most?</label>
+          <textarea id="repetitiveWork" name="Repetitive work" required placeholder="Examples: rewriting similar emails, pulling reports, scheduling, status updates, reviewing documents, copying information between places"></textarea>
+        </div>
+        <div class="form-group full">
+          <div class="group-label">Which work types should we look at first?</div>
+          <div class="checkbox-grid">
+            <label class="option-tile"><input type="checkbox" name="Work types to review" value="Writing"><span>Writing</span></label>
+            <label class="option-tile"><input type="checkbox" name="Work types to review" value="Summarizing"><span>Summarizing</span></label>
+            <label class="option-tile"><input type="checkbox" name="Work types to review" value="Quoting"><span>Quoting</span></label>
+            <label class="option-tile"><input type="checkbox" name="Work types to review" value="Reporting"><span>Reporting</span></label>
+            <label class="option-tile"><input type="checkbox" name="Work types to review" value="Follow-up"><span>Follow-up</span></label>
+            <label class="option-tile"><input type="checkbox" name="Work types to review" value="Reformatting"><span>Reformatting</span></label>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="bottlenecks">Where does work get stuck because someone is waiting on information, approval, or a response?</label>
+          <textarea id="bottlenecks" name="Workflow bottlenecks"></textarea>
+        </div>
+        <div class="form-group full">
+          <label for="repeatedQuestions">What questions do employees ask over and over internally?</label>
+          <textarea id="repeatedQuestions" name="Repeated internal questions"></textarea>
+        </div>
+        <div class="form-group full">
+          <label for="wishlist">What would you love AI to help with, even if you are not sure whether it is possible?</label>
+          <textarea id="wishlist" name="AI wishlist"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <div class="section-number">5</div>
+          <div>
+            <h2>Small pilot and rollout</h2>
+            <p class="section-note">A narrow first pilot is usually better than trying to roll AI everywhere at once.</p>
+          </div>
+        </div>
+        <div class="required-note">Required</div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label for="pilotArea">If we picked one small AI pilot for the next 30 days, what area would be most useful?</label>
+          <textarea id="pilotArea" name="Preferred 30-day AI pilot" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="timeline">How soon would you want to start?</label>
+          <select id="timeline" name="Pilot timeline" required>
+            <option value="">Select one</option>
+            <option>Immediately</option>
+            <option>Next 30 days</option>
+            <option>Next 90 days</option>
+            <option>This year</option>
+            <option>Just exploring</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="budget">Budget expectation</label>
+          <select id="budget" name="Budget expectation">
+            <option value="">Select one</option>
+            <option>Not sure yet</option>
+            <option>Small pilot first</option>
+            <option>Department-level project</option>
+            <option>Company-wide initiative</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="stakeholders">Who would need to be involved before AI became part of a real company process?</label>
+          <textarea id="stakeholders" name="Rollout stakeholders" placeholder="Examples: ownership, department leads, finance, HR, operations, legal, IT"></textarea>
+        </div>
+        <div class="form-group full">
+          <label for="success">What would make this AI effort feel successful?</label>
+          <textarea id="success" name="Success definition"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <div class="section-number">6</div>
+          <div>
+            <h2>Final notes</h2>
+            <p class="section-note">Anything else that would help us prepare for the conversation?</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label for="additionalNotes">Additional notes</label>
+          <textarea id="additionalNotes" name="Additional notes"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="submit-card">
+      <div>
+        <h2>Send the intake</h2>
+        <p>The answers will be emailed to Grant so we can prepare the AI discovery conversation.</p>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Discovery</button>
+    </section>
+  </form>
+</main>
+
+<div class="summary-bar">
+  <div class="summary-inner">
+    <div class="summary-stats">
+      <div>
+        <span class="stat-label">Required answered</span>
+        <span class="stat-value" id="requiredValue">0 of 11</span>
+      </div>
+      <div>
+        <span class="stat-label">AI usage</span>
+        <span class="stat-value" id="toolsValue">0 tools</span>
+      </div>
+      <div>
+        <span class="stat-label">Focus areas</span>
+        <span class="stat-value" id="areasValue">0 selected</span>
+      </div>
+    </div>
+    <div class="summary-actions">
+      <button type="button" class="btn btn-outline" id="saveDraftBtn">Save Draft</button>
+      <button type="button" class="btn btn-primary" id="jumpSubmitBtn">Review Submit</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const form = document.getElementById('assessmentForm');
+const storageKey = 'quality-ai-discovery-draft';
+const progressValue = document.getElementById('progressValue');
+const progressFill = document.getElementById('progressFill');
+const requiredValue = document.getElementById('requiredValue');
+const toolsValue = document.getElementById('toolsValue');
+const areasValue = document.getElementById('areasValue');
+const saveDraftBtn = document.getElementById('saveDraftBtn');
+const jumpSubmitBtn = document.getElementById('jumpSubmitBtn');
+
+function getFormControls() {
+  return Array.from(form.elements).filter((el) => el.name && !el.name.startsWith('_'));
+}
+
+function getRequiredGroups() {
+  const controls = getFormControls();
+  const names = [...new Set(controls.filter((el) => el.required).map((el) => el.name))];
+  return names.map((name) => controls.filter((el) => el.name === name));
+}
+
+function groupIsAnswered(group) {
+  const first = group[0];
+  if (first.type === 'radio' || first.type === 'checkbox') {
+    return group.some((el) => el.checked);
+  }
+  return Boolean(first.value.trim());
+}
+
+function updateProgress() {
+  const groups = getRequiredGroups();
+  const answered = groups.filter(groupIsAnswered).length;
+  const percent = groups.length ? Math.round((answered / groups.length) * 100) : 0;
+  const toolCount = form.querySelectorAll('input[name="Current AI tools"]:checked').length;
+  const areaCount = form.querySelectorAll('input[name="Work types to review"]:checked').length;
+
+  progressValue.textContent = `${percent}%`;
+  progressFill.style.width = `${percent}%`;
+  requiredValue.textContent = `${answered} of ${groups.length}`;
+  toolsValue.textContent = `${toolCount} ${toolCount === 1 ? 'tool' : 'tools'}`;
+  areasValue.textContent = `${areaCount} selected`;
+}
+
+function collectDraft() {
+  const draft = {};
+  getFormControls().forEach((el) => {
+    if (el.type === 'checkbox') {
+      if (!draft[el.name]) draft[el.name] = [];
+      if (el.checked) draft[el.name].push(el.value);
+      return;
+    }
+    if (el.type === 'radio') {
+      if (el.checked) draft[el.name] = el.value;
+      return;
+    }
+    draft[el.name] = el.value;
+  });
+  return draft;
+}
+
+function saveDraft(showState = true) {
+  localStorage.setItem(storageKey, JSON.stringify(collectDraft()));
+  if (showState) {
+    const original = saveDraftBtn.textContent;
+    saveDraftBtn.textContent = 'Saved';
+    setTimeout(() => { saveDraftBtn.textContent = original; }, 1400);
+  }
+}
+
+function loadDraft() {
+  const raw = localStorage.getItem(storageKey);
+  if (!raw) return;
+  let draft;
+  try {
+    draft = JSON.parse(raw);
+  } catch {
+    return;
+  }
+  getFormControls().forEach((el) => {
+    const value = draft[el.name];
+    if (value === undefined) return;
+    if (el.type === 'checkbox') {
+      el.checked = Array.isArray(value) && value.includes(el.value);
+      return;
+    }
+    if (el.type === 'radio') {
+      el.checked = value === el.value;
+      return;
+    }
+    el.value = value;
+  });
+}
+
+form.addEventListener('input', () => {
+  updateProgress();
+  saveDraft(false);
+});
+
+form.addEventListener('change', () => {
+  updateProgress();
+  saveDraft(false);
+});
+
+form.addEventListener('submit', () => {
+  document.getElementById('replyTo').value = document.getElementById('email').value;
+  localStorage.removeItem(storageKey);
+});
+
+saveDraftBtn.addEventListener('click', () => saveDraft(true));
+jumpSubmitBtn.addEventListener('click', () => {
+  document.querySelector('.submit-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+loadDraft();
+updateProgress();
+</script>
+</body>
+</html>
