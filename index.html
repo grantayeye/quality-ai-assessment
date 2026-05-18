@@ -613,7 +613,7 @@ textarea:focus {
     </div>
     <div class="intro-meta">
       <span>Estimated Time</span>
-      <strong>10 to 15 minutes</strong>
+      <strong>8 to 12 minutes</strong>
     </div>
   </section>
 
@@ -629,7 +629,7 @@ textarea:focus {
           <div class="section-number">1</div>
           <div>
             <h2>Contact and business context</h2>
-            <p class="section-note">Who should we follow up with, and what part of the business do they represent?</p>
+            <p class="section-note">Who should we follow up with, and what part of the business are they answering for?</p>
           </div>
         </div>
         <div class="required-note">Required</div>
@@ -643,20 +643,9 @@ textarea:focus {
           <label for="email">Email</label>
           <input id="email" name="Contact email" type="email" autocomplete="email" required>
         </div>
-        <div class="form-group">
+        <div class="form-group full">
           <label for="role">Role or department</label>
           <input id="role" name="Role or department" type="text" required>
-        </div>
-        <div class="form-group">
-          <label for="teamSize">Team size</label>
-          <select id="teamSize" name="Team size" required>
-            <option value="">Select one</option>
-            <option>1 to 10</option>
-            <option>11 to 25</option>
-            <option>26 to 50</option>
-            <option>51 to 100</option>
-            <option>100+</option>
-          </select>
         </div>
       </div>
     </section>
@@ -667,13 +656,13 @@ textarea:focus {
           <div class="section-number">2</div>
           <div>
             <h2>How AI is being used today</h2>
-            <p class="section-note">Basic chat usage is a good starting point. We want to know what is already happening.</p>
+            <p class="section-note">Basic chat usage is a good starting point. We want to know what is actually happening day to day, including informal use.</p>
           </div>
         </div>
       </div>
       <div class="form-grid">
         <div class="form-group full">
-          <div class="group-label">Tools currently used</div>
+          <div class="group-label">AI tools people are actually using</div>
           <div class="checkbox-grid">
             <label class="option-tile"><input type="checkbox" name="Current AI tools" value="ChatGPT"><span>ChatGPT</span></label>
             <label class="option-tile"><input type="checkbox" name="Current AI tools" value="Microsoft Copilot"><span>Microsoft Copilot</span></label>
@@ -749,30 +738,23 @@ textarea:focus {
         <div class="section-title">
           <div class="section-number">4</div>
           <div>
-            <h2>Systems and data</h2>
-            <p class="section-note">AI gets more useful when it can safely connect to real business information.</p>
+            <h2>Information needs and guardrails</h2>
+            <p class="section-note">We already know the IT environment at a high level. This section is about how information is used inside the business.</p>
           </div>
         </div>
       </div>
       <div class="form-grid">
         <div class="form-group full">
-          <div class="group-label">Systems used regularly</div>
-          <div class="checkbox-grid">
-            <label class="option-tile"><input type="checkbox" name="Systems used" value="Microsoft 365"><span>Microsoft 365</span></label>
-            <label class="option-tile"><input type="checkbox" name="Systems used" value="Google Workspace"><span>Google Workspace</span></label>
-            <label class="option-tile"><input type="checkbox" name="Systems used" value="QuickBooks or accounting"><span>Accounting</span></label>
-            <label class="option-tile"><input type="checkbox" name="Systems used" value="CRM"><span>CRM</span></label>
-            <label class="option-tile"><input type="checkbox" name="Systems used" value="Project management"><span>Project management</span></label>
-            <label class="option-tile"><input type="checkbox" name="Systems used" value="Industry-specific software"><span>Industry software</span></label>
-          </div>
+          <label for="informationFriction">What information do people have to hunt for, clean up, or rewrite before work can move forward?</label>
+          <textarea id="informationFriction" name="Information friction" placeholder="Examples: finding the latest version of something, turning notes into follow-up, cleaning spreadsheets, pulling details from emails, preparing reports"></textarea>
         </div>
         <div class="form-group full">
-          <label for="dataLocations">Where does important business information live?</label>
-          <textarea id="dataLocations" name="Important data locations" placeholder="Examples: shared drives, email, spreadsheets, accounting system, CRM, project folders, PDFs, paper forms"></textarea>
+          <label for="judgmentAreas">Where does the team still need human judgment before an answer, quote, report, or customer response is ready?</label>
+          <textarea id="judgmentAreas" name="Human judgment areas" placeholder="Examples: pricing judgment, customer tone, exceptions, approvals, field notes, risk review, final recommendations"></textarea>
         </div>
         <div class="form-group full">
-          <label for="dataConcerns">Any data privacy, client confidentiality, or security concerns?</label>
-          <textarea id="dataConcerns" name="Data and security concerns"></textarea>
+          <label for="guardrails">What should AI not do without a person reviewing it first?</label>
+          <textarea id="guardrails" name="AI guardrails" placeholder="Examples: sending customer messages, changing financial records, giving pricing, making commitments, using sensitive client information"></textarea>
         </div>
       </div>
     </section>
